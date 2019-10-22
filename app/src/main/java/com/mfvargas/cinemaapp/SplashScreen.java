@@ -8,7 +8,7 @@ import android.os.Handler;
 
 public class SplashScreen extends AppCompatActivity {
 
-    //durará 4000 ms
+    //durará 2000 ms
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,11 +17,11 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(SplashScreen.this,MainActivity.class);
+                Intent intent=new Intent(SplashScreen.this,DetallePelicula.class);
                 startActivity(intent);
                 finish();
             }
-        },4000);
+        },2000);
 
     }
 }

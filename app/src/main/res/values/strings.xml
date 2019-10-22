@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">CinemaApp</string>
     <string name="titulo_activity1">Películas en cartelera</string>
+    <string name="descripcion">Descripción</string>
+    <string name="votacion">Votación</string>
+    <string name="fecha">Fecha</string>
+    <string name="popularidad">Popularidad</string>
+    <string name="texto_muestra">Muestra descripción</string>
+    <string name="titulo_muestra">Muestra</string>
 </resources>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetallePelicula"
+    android:background="@color/primary_light">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/Margen"
+        android:layout_marginTop="@dimen/Margen"
+        android:layout_marginRight="@dimen/Margen"
+        android:layout_marginBottom="@dimen/Margen"
+        app:cardCornerRadius="@dimen/cornerRadius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/Margen"
+            android:layout_marginTop="@dimen/Margen"
+            android:layout_marginRight="@dimen/Margen"
+            android:layout_marginBottom="@dimen/Margen">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/Titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/titulo_muestra"
+                android:textSize="@dimen/Titulo"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/Espacio"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelDescripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/descripcion"
+                    android:textSize="@dimen/Label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Descripcion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Espacio"
+                    android:text="@string/texto_muestra"
+                    android:textSize="@dimen/Datos" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/Espacio"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelVotacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/votacion"
+                    android:textSize="@dimen/Label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Votacion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Espacio"
+                    android:text="@string/texto_muestra"
+                    android:textSize="@dimen/Datos" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/Espacio"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fecha"
+                    android:textSize="@dimen/Label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Espacio"
+                    android:text="@string/texto_muestra"
+                    android:textSize="@dimen/Datos" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/Espacio"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/labelPopularidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/popularidad"
+                    android:textSize="@dimen/Label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/Popularidad"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/Espacio"
+                    android:text="@string/texto_muestra"
+                    android:textSize="@dimen/Datos" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -14,7 +14,8 @@
         <ImageView
             android:layout_width="@dimen/previewImage"
             android:layout_height="@dimen/previewImage"
-            android:src="@drawable/iconoapp"/>
+            android:src="@drawable/iconoapp"
+            android:id="@+id/vp_ImageView"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -25,13 +26,15 @@
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_muestra"
                 android:textSize="@dimen/Titulo"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:id="@+id/vp_Titulo"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_muestra"
                 android:textSize="@dimen/Datos"
-                android:layout_marginTop="@dimen/Espacio"/>
+                android:layout_marginTop="@dimen/Espacio"
+                android:id="@+id/vp_descripcion"/>
         </LinearLayout>
     </LinearLayout>
 

@@ -26,6 +26,33 @@ public class MainActivity extends AppCompatActivity {
         pelicula.add(new Pelicula("Los cheveres","Saben cocinar",
                 8.5,50,R.drawable.iconoapp,"na",
                 "2010-10-25"));
+        pelicula.add(new Pelicula("Marly y Yo","De un perrito",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Cenicienta","En tu cara perra",
+                2.5,5,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Los cheveres","Saben cocinar",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-25"));
+        pelicula.add(new Pelicula("Marly y Yo","De un perrito",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Cenicienta","En tu cara perra",
+                2.5,5,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Los cheveres","Saben cocinar",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-25"));
+        pelicula.add(new Pelicula("Marly y Yo","De un perrito",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Cenicienta","En tu cara perra",
+                2.5,5,R.drawable.iconoapp,"na",
+                "2010-10-02"));
+        pelicula.add(new Pelicula("Los cheveres","Saben cocinar",
+                8.5,50,R.drawable.iconoapp,"na",
+                "2010-10-25"));
 
 
         //Llenamos vector con los títulos

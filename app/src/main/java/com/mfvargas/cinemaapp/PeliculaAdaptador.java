@@ -1,10 +1,12 @@
 package com.mfvargas.cinemaapp;
 
+import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,11 +16,14 @@ import java.util.ArrayList;
 //<> Recibe una colección de películas viewHolder
 public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.PeliculaViewHolder>{
 
+
     ArrayList<Pelicula> peliculas;
+    Activity activity;
 
     //constructor
-    public PeliculaAdaptador(ArrayList<Pelicula> peliculas){
+    public PeliculaAdaptador(ArrayList<Pelicula> peliculas, Activity activity){
         this.peliculas=peliculas;
+        this.activity=activity;
     }
 
 
@@ -39,10 +44,17 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     @Override
     public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, int position) {
         //Seteamos cada uno de los elementos
-        Pelicula pelicula=peliculas.get(position);
+        final Pelicula pelicula=peliculas.get(position);
         peliculaViewHolder.vistaPrevia.setImageResource(pelicula.getPoster_path());
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
         peliculaViewHolder.descripcion.setText(pelicula.getOverview());
+
+        peliculaViewHolder.vistaPrevia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(activity,pelicula.getTitle(),Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     //Cantidad de elementos que contiene mi lista

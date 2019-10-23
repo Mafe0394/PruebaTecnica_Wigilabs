@@ -18,15 +18,20 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/Margen">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/titulo_muestra"/>
+                android:text="@string/titulo_muestra"
+                android:textSize="@dimen/Titulo"
+                android:textStyle="bold"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/texto_muestra"/>
+                android:text="@string/texto_muestra"
+                android:textSize="@dimen/Datos"
+                android:layout_marginTop="@dimen/Espacio"/>
         </LinearLayout>
     </LinearLayout>
 

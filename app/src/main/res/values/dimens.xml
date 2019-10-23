@@ -7,4 +7,5 @@
     <dimen name="Margen">6dp</dimen>
     <dimen name="cornerRadius">8dp</dimen>
     <dimen name="previewImage">100dp</dimen>
+    <dimen name="elevacion_ActionBar">4dp</dimen>
 </resources>

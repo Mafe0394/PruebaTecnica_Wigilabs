@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Toolbar miActionBar= findViewById(R.id.miActionBar);
-        //setSupportActionBar(miActionBar);
+        Toolbar miActionBar= findViewById(R.id.miActionBar);
+        setSupportActionBar(miActionBar);
 
         //Objeto para manipular el RecyclerView
         listaPeliculas=findViewById(R.id.recView);

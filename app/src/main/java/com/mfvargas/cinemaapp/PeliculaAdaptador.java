@@ -1,6 +1,7 @@
 package com.mfvargas.cinemaapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -49,10 +51,14 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
         peliculaViewHolder.descripcion.setText(pelicula.getOverview());
 
-        peliculaViewHolder.vistaPrevia.setOnClickListener(new View.OnClickListener() {
+        peliculaViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(activity,pelicula.getTitle(),Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(activity,DetallePelicula.class);
+                intent.putExtra("titulo",pelicula.getTitle());
+                intent.putExtra("descripcion",pelicula.getOverview());
+                activity.startActivity(intent);
             }
         });
     }
@@ -72,6 +78,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
         private ImageView vistaPrevia;
         private TextView titulo;
         private TextView descripcion;
+        private CardView cardView;
 
         //Hace match con la superclase
         public PeliculaViewHolder(@NonNull View itemView) {
@@ -80,6 +87,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
             vistaPrevia=itemView.findViewById(R.id.vp_ImageView);
             titulo=itemView.findViewById(R.id.vp_Titulo);
             descripcion=itemView.findViewById(R.id.vp_descripcion);
+            cardView=itemView.findViewById(R.id.cvPelicula);
         }
     }
 

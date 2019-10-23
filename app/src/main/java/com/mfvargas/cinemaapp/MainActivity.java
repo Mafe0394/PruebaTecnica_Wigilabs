@@ -25,6 +25,14 @@ public class MainActivity extends AppCompatActivity {
                 "2010-10-02"));
         pelicula.add(new Pelicula("Los cheveres","Saben cocinar",
                 8.5,50,R.drawable.iconoapp,"na",
-                "2010-10-02"));
+                "2010-10-25"));
+
+
+        //Llenamos vector con los títulos
+        ArrayList<String> titulosPelicula = new ArrayList<>();
+        for (Pelicula peliculas:pelicula
+             ) {
+            titulosPelicula.add(peliculas.getTitle());
+        }
     }
 }

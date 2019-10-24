@@ -19,11 +19,11 @@ import java.util.ArrayList;
 public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.PeliculaViewHolder>{
 
 
-    ArrayList<Pelicula> peliculas;
+    ListaPeliculas peliculas;
     Activity activity;
 
     //constructor
-    public PeliculaAdaptador(ArrayList<Pelicula> peliculas, Activity activity){
+    public PeliculaAdaptador(ListaPeliculas peliculas, Activity activity){
         this.peliculas=peliculas;
         this.activity=activity;
     }
@@ -46,7 +46,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     @Override
     public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, int position) {
         //Seteamos cada uno de los elementos
-        final Pelicula pelicula=peliculas.get(position);
+        final Pelicula pelicula=peliculas.getResults().get(position);
         peliculaViewHolder.vistaPrevia.setImageResource(R.drawable.iconoapp);
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
         peliculaViewHolder.descripcion.setText(pelicula.getOverview());
@@ -66,7 +66,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     //Cantidad de elementos que contiene mi lista
     @Override
     public int getItemCount() {
-        return peliculas.size();
+        return peliculas.getResults().size();
     }
 
     //Clase inner static que se pueda utilizar
@@ -79,6 +79,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
         private TextView titulo;
         private TextView descripcion;
         private CardView cardView;
+
 
         //Hace match con la superclase
         public PeliculaViewHolder(@NonNull View itemView) {

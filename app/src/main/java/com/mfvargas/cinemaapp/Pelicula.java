@@ -13,7 +13,7 @@ public class Pelicula {
     private String backdrop_path;
     private String original_language;
     private String original_title;
-    private int genre_ids;
+//    private int genre_ids;
     private String title;
     private float vote_average;
     private String overview;
@@ -107,13 +107,13 @@ public class Pelicula {
         this.original_title = original_title;
     }
 
-    public int getGenre_ids() {
-        return genre_ids;
-    }
-
-    public void setGenre_ids(int genre_ids) {
-        this.genre_ids = genre_ids;
-    }
+//    public int getGenre_ids() {
+//        return genre_ids;
+//    }
+//
+//    public void setGenre_ids(int genre_ids) {
+//        this.genre_ids = genre_ids;
+//    }
 
     public String getTitle() {
         return title;

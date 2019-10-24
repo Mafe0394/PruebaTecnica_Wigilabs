@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,9 +50,13 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, final int position) {
         //Seteamos cada uno de los elementos
         final Pelicula pelicula=peliculas.getResults().get(position);
-        Picasso.get().load("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + pelicula.getPoster_path()).into(peliculaViewHolder.vistaPrevia);;
+        Picasso.get().load("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + pelicula.getPoster_path())
+                .into(peliculaViewHolder.vistaPrevia);;
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
+        peliculaViewHolder.ratingBar.setRating(pelicula.getVote_average()/2);
         String resumen=pelicula.getOverview();
+
+        //Mostramos hasta 200 caráteres máximo
         if(pelicula.getOverview().length()>200)
             resumen=resumen.substring(0,200) + "...";
 
@@ -89,6 +94,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
         private TextView titulo;
         private TextView descripcion;
         private CardView cardView;
+        private RatingBar ratingBar;
 
 
         //Hace match con la superclase
@@ -99,6 +105,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
             titulo=itemView.findViewById(R.id.vp_Titulo);
             descripcion=itemView.findViewById(R.id.vp_descripcion);
             cardView=itemView.findViewById(R.id.cvPelicula);
+            ratingBar=itemView.findViewById(R.id.Rating_m);
         }
     }
 

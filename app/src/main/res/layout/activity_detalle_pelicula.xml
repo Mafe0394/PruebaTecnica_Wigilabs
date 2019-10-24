@@ -98,6 +98,14 @@
                         android:text="@string/texto_muestra"
                         android:textSize="@dimen/Datos"
                         android:textColor="@color/primary_text"/>
+
+                    <RatingBar
+                        android:id="@+id/Rating"
+                        style="@android:style/Widget.Material.Light.RatingBar.Small"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        tools:targetApi="lollipop" />
                 </LinearLayout>
 
                 <LinearLayout

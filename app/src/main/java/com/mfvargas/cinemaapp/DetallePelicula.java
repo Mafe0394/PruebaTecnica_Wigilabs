@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.text.Layout;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextClock;
 import android.widget.TextView;
 
@@ -45,9 +46,10 @@ public class DetallePelicula extends AppCompatActivity {
         TextView tvVotacion=findViewById(R.id.Votacion);
         TextView tvFecha=findViewById(R.id.Fecha);
         TextView tvPopularidad=findViewById(R.id.Popularidad);
+        RatingBar ratingBar=findViewById(R.id.Rating);
 
 
-
+        ratingBar.setRating(votacion/2);
         tvTitulo.setText(titulo);
         tvDescripción.setText(descripcion);
         Picasso.get().load(image_path).into(imImagen);

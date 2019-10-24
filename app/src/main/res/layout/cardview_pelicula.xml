@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView android:id="@+id/cvPelicula"
+<androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvPelicula"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -30,6 +31,13 @@
                 android:textStyle="bold"
                 android:id="@+id/vp_Titulo"
                 android:textColor="@color/primary_text"/>
+            <RatingBar
+                android:id="@+id/Rating_m"
+                style="@android:style/Widget.Material.Light.RatingBar.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                tools:targetApi="lollipop" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

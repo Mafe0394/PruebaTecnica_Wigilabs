@@ -46,7 +46,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
 
     //Adapta los objetos a cada cardView
     @Override
-    public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, int position) {
+    public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, final int position) {
         //Seteamos cada uno de los elementos
         final Pelicula pelicula=peliculas.getResults().get(position);
         Picasso.get().load("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + pelicula.getPoster_path()).into(peliculaViewHolder.vistaPrevia);;
@@ -64,6 +64,11 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
                 Intent intent=new Intent(activity,DetallePelicula.class);
                 intent.putExtra("titulo",pelicula.getTitle());
                 intent.putExtra("descripcion",pelicula.getOverview());
+                intent.putExtra("votacion",pelicula.getVote_average());
+                intent.putExtra("fecha",pelicula.getRelease_date());
+                intent.putExtra("popularidad",pelicula.getPopularity());
+                intent.putExtra("imagen",pelicula.getPoster_path());
+                intent.putExtra("posicion",position);
                 activity.startActivity(intent);
             }
         });

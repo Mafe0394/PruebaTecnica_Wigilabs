@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    tools:context=".DetallePelicula"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetallePelicula"
-    android:background="@color/primary_light">
+    android:background="@color/primary_light"
+    android:id="@+id/backGround">
     <include android:id="@+id/miActionBar"
         layout="@layout/action_bar"></include>
 
@@ -33,14 +37,17 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="match_parent"
+                android:id="@+id/mainImage"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:scaleType="centerCrop" />
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/splash_cinema"
+                android:adjustViewBounds="true"/>
 
             <TextView
                 android:id="@+id/Titulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="400dp"
+                android:layout_height="600dp"
                 android:text="@string/titulo_muestra"
                 android:textSize="@dimen/Titulo"
                 android:textStyle="bold" />
@@ -145,3 +152,4 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

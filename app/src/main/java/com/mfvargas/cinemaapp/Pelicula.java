@@ -7,7 +7,7 @@ public class Pelicula {
     private double popularity;
     private int vote_count;
     private boolean video;
-    private int poster_path;
+    private String poster_path;
     private int id;
     private boolean adult;
     private String backdrop_path;
@@ -22,7 +22,7 @@ public class Pelicula {
     //Método constructor
 
 
-    public Pelicula(String title, String overview, double popularity, int vote_count, int poster_path,
+    public Pelicula(String title, String overview, double popularity, int vote_count, String poster_path,
                     String backdrop_path,   String release_date) {
         this.popularity = popularity;
         this.vote_count = vote_count;
@@ -59,11 +59,11 @@ public class Pelicula {
         this.video = video;
     }
 
-    public int getPoster_path() {
+    public String getPoster_path() {
         return poster_path;
     }
 
-    public void setPoster_path(int poster_path) {
+    public void setPoster_path(String poster_path) {
         this.poster_path = poster_path;
     }
 

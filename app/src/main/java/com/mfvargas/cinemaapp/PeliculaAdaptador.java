@@ -47,7 +47,7 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, int position) {
         //Seteamos cada uno de los elementos
         final Pelicula pelicula=peliculas.get(position);
-        peliculaViewHolder.vistaPrevia.setImageResource(pelicula.getPoster_path());
+        peliculaViewHolder.vistaPrevia.setImageResource(R.drawable.iconoapp);
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
         peliculaViewHolder.descripcion.setText(pelicula.getOverview());
 

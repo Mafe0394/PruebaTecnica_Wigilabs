@@ -60,7 +60,6 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
         peliculaViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(activity,pelicula.getTitle(),Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(activity,DetallePelicula.class);
                 intent.putExtra("titulo",pelicula.getTitle());
                 intent.putExtra("descripcion",pelicula.getOverview());

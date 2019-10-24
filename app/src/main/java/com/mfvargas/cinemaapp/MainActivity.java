@@ -17,6 +17,7 @@ import com.mfvargas.cinemaapp.Retrofit.RetrofitAdapter;
 import com.mfvargas.cinemaapp.Retrofit.IPelicula;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -34,9 +35,17 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Traemos la información de la API
-        Call<ListaPeliculas> call= RetrofitAdapter.getApiService().getPelicula();
+        Call<ListaPeliculas> call;
+        if(Locale.getDefault().getLanguage()=="es") {
+            call= RetrofitAdapter.getApiService().getPeliculaes();
+        } else {
+            call= RetrofitAdapter.getApiService().getPelicula();
+        }
         call.enqueue(this);
+
+        //Traemos la información de la API
+
+
 
         //inicializamos ActionBar
         inicializarActionBar();
@@ -78,8 +87,6 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
         ListaPeliculas peliculas=response.body();
         PeliculaAdaptador adaptador=new PeliculaAdaptador(peliculas,this);
         listaPeliculas.setAdapter(adaptador);
-
-        Toast.makeText(this,"GENIAL!!! " + peliculas.getResults().size(),Toast.LENGTH_LONG).show();
 
     }
 

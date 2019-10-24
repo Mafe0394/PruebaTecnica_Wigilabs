@@ -33,9 +33,9 @@ public class DetallePelicula extends AppCompatActivity {
 
 
         //Toolbar
-        Toolbar miActionBar= findViewById(R.id.miActionBar);
-        miActionBar.setTitle(titulo);
+        Toolbar miActionBar= findViewById(R.id.miActionBar2);
         setSupportActionBar(miActionBar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

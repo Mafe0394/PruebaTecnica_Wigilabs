@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
+    android:layout_height="wrap_content"
+    android:minHeight="?attr/actionBarSize"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorPrimary"
     android:elevation="@dimen/elevacion_ActionBar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
-    app:title=""    >
+    >
+
+    <ImageView
+        android:id="@+id/mainImage"
+        android:layout_width="@dimen/previewImage_width"
+        android:layout_height="@dimen/previewImage_height"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        />
 
 
 </androidx.appcompat.widget.Toolbar>

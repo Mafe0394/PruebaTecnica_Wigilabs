@@ -7,4 +7,5 @@
     <string name="popularidad">Popularidad</string>
     <string name="texto_muestra">Muestra descripción</string>
     <string name="titulo_muestra">Muestra</string>
+    <string name="path_preview">https://image.tmdb.org/t/p/w185_and_h278_bestv2</string>
 </resources>

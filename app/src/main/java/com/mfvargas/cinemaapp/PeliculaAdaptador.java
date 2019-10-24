@@ -13,6 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 //<> Recibe una colección de películas viewHolder
@@ -47,9 +49,13 @@ public class PeliculaAdaptador extends RecyclerView.Adapter<PeliculaAdaptador.Pe
     public void onBindViewHolder(@NonNull PeliculaViewHolder peliculaViewHolder, int position) {
         //Seteamos cada uno de los elementos
         final Pelicula pelicula=peliculas.getResults().get(position);
-        peliculaViewHolder.vistaPrevia.setImageResource(R.drawable.iconoapp);
+        Picasso.get().load("https://image.tmdb.org/t/p/w185_and_h278_bestv2" + pelicula.getPoster_path()).into(peliculaViewHolder.vistaPrevia);;
         peliculaViewHolder.titulo.setText(pelicula.getTitle());
-        peliculaViewHolder.descripcion.setText(pelicula.getOverview());
+        String resumen=pelicula.getOverview();
+        if(pelicula.getOverview().length()>200)
+            resumen=resumen.substring(0,200) + "...";
+
+            peliculaViewHolder.descripcion.setText(resumen);
 
         peliculaViewHolder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,29 +12,32 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
         <ImageView
-            android:layout_width="@dimen/previewImage"
-            android:layout_height="@dimen/previewImage"
+            android:layout_width="@dimen/previewImage_width"
+            android:layout_height="@dimen/previewImage_height"
             android:src="@drawable/iconoapp"
             android:id="@+id/vp_ImageView"/>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="@dimen/Margen">
+            android:layout_marginLeft="@dimen/Margen"
+            android:layout_marginRight="@dimen/Margen">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/titulo_muestra"
                 android:textSize="@dimen/Titulo"
                 android:textStyle="bold"
-                android:id="@+id/vp_Titulo"/>
+                android:id="@+id/vp_Titulo"
+                android:textColor="@color/primary_text"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/texto_muestra"
                 android:textSize="@dimen/Datos"
                 android:layout_marginTop="@dimen/Espacio"
-                android:id="@+id/vp_descripcion"/>
+                android:id="@+id/vp_descripcion"
+                android:textColor="@color/primary_text"/>
         </LinearLayout>
     </LinearLayout>
 

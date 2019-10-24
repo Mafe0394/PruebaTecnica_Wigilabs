@@ -90,17 +90,6 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
 
     }
 
-//    @Override
-//    public void onResponse(Call<ListaPeliculas> call, Response<ListaPeliculas> response) {
-//        if(response.isSuccessful()){
-//            peliculas=response.body();
-//        }
-//    }
-//
-//    @Override
-//    public void onFailure(Call<ListaPeliculas> call, Throwable t) {
-//        Toast.makeText(this,"Error: " + t.getMessage().toString(),Toast.LENGTH_SHORT).show();
-//    }
 }
 
 

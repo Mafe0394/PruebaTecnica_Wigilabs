@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Toast.makeText(this,Locale.getDefault().getLanguage(),Toast.LENGTH_LONG).show();
         Call<ListaPeliculas> call;
         if(Locale.getDefault().getLanguage()=="es") {
             call= RetrofitAdapter.getApiService().getPeliculaes();
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
         }
         call.enqueue(this);
 
-        //Traemos la información de la API
+
 
 
 

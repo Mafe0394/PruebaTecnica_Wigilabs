@@ -1,10 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">CinemaApp</string>
-    <string name="titulo_activity1">Películas más populares</string>
-    <string name="descripcion">Descripción</string>
-    <string name="votacion">Votación</string>
-    <string name="fecha">Fecha</string>
-    <string name="popularidad">Popularidad</string>
+    <string name="titulo_activity1">Most popular movies</string>
+    <string name="descripcion">Description</string>
+    <string name="votacion">User Score</string>
+    <string name="fecha">Date release</string>
+    <string name="popularidad">Popularity</string>
     <string name="texto_muestra">Muestra descripción</string>
     <string name="titulo_muestra">Muestra</string>
     <string name="path_preview">https://image.tmdb.org/t/p/w185_and_h278_bestv2</string>

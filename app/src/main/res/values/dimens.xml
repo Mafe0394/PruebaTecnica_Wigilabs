@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="Titulo">25dp</dimen>
-    <dimen name="Datos">15sp</dimen>
+    <dimen name="Titulo">25sp</dimen>
+    <dimen name="Datos">16sp</dimen>
     <dimen name="Label">18sp</dimen>
     <dimen name="Espacio">8dp</dimen>
     <dimen name="Margen">6dp</dimen>

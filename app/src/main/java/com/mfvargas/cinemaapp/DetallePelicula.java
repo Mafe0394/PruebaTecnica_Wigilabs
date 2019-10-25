@@ -6,11 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.text.Layout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.TextClock;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.PicassoProvider;
 
 public class DetallePelicula extends AppCompatActivity {
 
@@ -49,8 +52,11 @@ public class DetallePelicula extends AppCompatActivity {
         RatingBar ratingBar=findViewById(R.id.Rating);
 
 
+
+
+
         ratingBar.setRating(votacion/2);
-        tvTitulo.setText(titulo);
+        tvTitulo.setText(titulo.toUpperCase());
         tvDescripción.setText(descripcion);
         Picasso.get().load(image_path).into(imImagen);
         tvVotacion.setText(Float.toString(votacion));

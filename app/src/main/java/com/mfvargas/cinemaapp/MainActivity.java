@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 
@@ -29,14 +31,24 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
     ArrayList<Pelicula> pelicula;
     private RecyclerView listaPeliculas;
     private ListaPeliculas peliculas;
+    private SwipeRefreshLayout myRefresh;
+    Call<ListaPeliculas> call;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        //Views
+        myRefresh=findViewById(R.id.Refresh);
+        listaPeliculas=findViewById(R.id.recView);
+
+
+
         //Toast.makeText(this,Locale.getDefault().getLanguage(),Toast.LENGTH_LONG).show();
-        Call<ListaPeliculas> call;
+
+        //Obtener data
         if(Locale.getDefault().getLanguage()=="es") {
             call= RetrofitAdapter.getApiService().getPeliculaes();
         } else {
@@ -44,45 +56,50 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
         }
         call.enqueue(this);
 
-
-
-
-
         //inicializamos ActionBar
         inicializarActionBar();
+        myRefresh.setColorSchemeColors(getResources().getColor(R.color.colorAccent));
 
-        //Objeto para manipular el RecyclerView
-        listaPeliculas=findViewById(R.id.recView);
 
-        //Elementos en una lista
 
+        //Elementos del recycler View acomodados en vista de Lista
         LinearLayoutManager llm=new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
 
+        //Construcción RecyclerView
         listaPeliculas.setLayoutManager(llm);
-        inicializarListPeliculas();
-        inicializarAdaptador();
+
+        //método para controlar el gesto refresh
+        myRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refrescandoContenido();
+            }
+        });
+
 
     }
 
-    public void inicializarAdaptador(){
-
+    //Llama nuevamente el contenido para refrescar el recyclerView
+    public void refrescandoContenido(){
+        if(Locale.getDefault().getLanguage()=="es") {
+            call= RetrofitAdapter.getApiService().getPeliculaes();
+        } else {
+            call= RetrofitAdapter.getApiService().getPelicula();
+        }
+        call.enqueue(this);
+        myRefresh.setRefreshing(false);
     }
 
-    public void inicializarListPeliculas(){
 
 
-        pelicula=new ArrayList<Pelicula>();
-        pelicula.add(new Pelicula("Marly y Yo","De un perrito",
-                8.5,50,"dd","na",
-                "2010-10-02"));
-    }
-
+    //Inicialización ActionBar
     public void inicializarActionBar(){
         Toolbar miActionBar= findViewById(R.id.miActionBar);
         setSupportActionBar(miActionBar);
     }
 
+    //La obtención de los datos fue exitosa
     @Override
     public void onResponse(Call<ListaPeliculas> call, Response<ListaPeliculas> response) {
         ListaPeliculas peliculas=response.body();
@@ -93,8 +110,8 @@ public class MainActivity extends AppCompatActivity implements Callback<ListaPel
 
     @Override
     public void onFailure(Call<ListaPeliculas> call, Throwable t) {
-        Toast.makeText(this,"Error: " + t.getMessage().toString(),Toast.LENGTH_LONG).show();
-        Log.d("gato",t.getMessage().toString());
+        Toast.makeText(this,"Error al cargar los datos",Toast.LENGTH_LONG).show();
+        Log.d("Error, revisar",t.getMessage().toString());
 
     }
 

@@ -15,8 +15,7 @@
         android:layout_width="@dimen/previewImage_width"
         android:layout_height="@dimen/previewImage_height"
         android:scaleType="centerCrop"
-        android:adjustViewBounds="true"
-        />
+        android:adjustViewBounds="true"/>
 
 
 </androidx.appcompat.widget.Toolbar>
